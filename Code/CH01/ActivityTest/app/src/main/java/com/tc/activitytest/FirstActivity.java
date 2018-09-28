@@ -21,6 +21,15 @@ public class FirstActivity extends AppCompatActivity {
                 Toast.makeText(FirstActivity.this, "You clicked Button 1", Toast.LENGTH_SHORT).show();
             }
         });
+
+        Button btn2 = findViewById(R.id.btn_free);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(FirstActivity.this, "Free activity", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
     }
 
     @Override

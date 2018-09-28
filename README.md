@@ -84,7 +84,12 @@ layout/first_layout.xml
 
 
 # Android Studio 快捷键
-C-F9        build
-S-F10		run
-C-F2		stop
++ 编译相关
 
+C-F9        build  
+S-F10		run  
+C-F2		stop   
+
++ 编辑相关
+
+Ctrl + Alt + L 格式化代码
