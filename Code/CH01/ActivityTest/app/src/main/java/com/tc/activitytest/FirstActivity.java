@@ -24,6 +24,7 @@ public class FirstActivity extends AppCompatActivity {
                 //Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
                 Intent intent = new Intent("com.tc.activitytest.ACTION_START");
                 intent.addCategory("com.tc.activitytest.MY_CATEGORY");
+                intent.putExtra("extra_data", "Hello the 2nd activity");
                 startActivity(intent);
             }
         });
@@ -43,6 +44,16 @@ public class FirstActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("http://www.baidu.com"));
+                startActivity(intent);
+            }
+        });
+
+        Button btn4 = findViewById(R.id.btn_dial);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:10086"));
                 startActivity(intent);
             }
         });

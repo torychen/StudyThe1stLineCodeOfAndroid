@@ -18,11 +18,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity" android:label="This is 2nd activity">
+        <activity
+            android:name=".SecondActivity"
+            android:label="This is 2nd activity">
             <intent-filter>
                 <action android:name="com.tc.activitytest.ACTION_START" />
+
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="com.tc.activitytest.MY_CATEGORY"/>
+                <category android:name="com.tc.activitytest.MY_CATEGORY" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ThirdActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="http" />
             </intent-filter>
         </activity>
     </application>
