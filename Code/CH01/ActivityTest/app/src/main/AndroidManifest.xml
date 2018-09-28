@@ -19,7 +19,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" android:label="This is 2nd activity">
-
+            <intent-filter>
+                <action android:name="com.tc.activitytest.ACTION_START" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.tc.activitytest.MY_CATEGORY"/>
+            </intent-filter>
         </activity>
     </application>
 

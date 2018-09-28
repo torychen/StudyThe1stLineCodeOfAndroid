@@ -5,12 +5,17 @@
 
     <Button
         android:id="@+id/btn_for_toast"
-        android:text="Button 1"
+        android:text="Goto the 2nd Activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/btn_free"
         android:text="free activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_open_browser"
+        android:text="open browser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>
