@@ -8,6 +8,13 @@
         android:text="Goto the 2nd Activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_2_3rd_activity"
+        android:text="Goto the 3rd Activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/btn_free"
         android:text="free activity"

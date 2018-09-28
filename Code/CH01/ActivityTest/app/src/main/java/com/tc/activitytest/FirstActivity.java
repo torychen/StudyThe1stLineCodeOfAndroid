@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +27,17 @@ public class FirstActivity extends AppCompatActivity {
                 intent.addCategory("com.tc.activitytest.MY_CATEGORY");
                 intent.putExtra("extra_data", "Hello the 2nd activity");
                 startActivity(intent);
+            }
+        });
+
+        Button btnGoto3rdActivity = findViewById(R.id.btn_2_3rd_activity);
+        btnGoto3rdActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(FirstActivity.this, "Jump to the 3rd activity", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(FirstActivity.this, ThirdActivity.class);
+
+                startActivityForResult(intent, 1);
             }
         });
 
@@ -78,5 +90,16 @@ public class FirstActivity extends AppCompatActivity {
             default:
         }
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case 1:
+                if (RESULT_OK == resultCode) {
+                    String res = data.getStringExtra("data_return");
+                    Log.d("FirstActivity", res);
+                }
+        }
     }
 }
