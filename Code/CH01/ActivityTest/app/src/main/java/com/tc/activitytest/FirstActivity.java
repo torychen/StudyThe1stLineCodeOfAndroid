@@ -1,5 +1,6 @@
 package com.tc.activitytest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,7 +19,9 @@ public class FirstActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(FirstActivity.this, "You clicked Button 1", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FirstActivity.this, "You clicked Button 1 to jump to the 2nd activity", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                startActivity(intent);
             }
         });
 
