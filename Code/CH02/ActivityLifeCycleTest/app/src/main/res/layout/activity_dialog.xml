@@ -4,19 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_start_normal"
-        android:text="@string/btn_normal_activity_name"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_start_dialog"
-        android:text="@string/btn_dialog_activity_name"/>
-
-
+        android:text="@string/dialog_activity_name"/>
 
 </LinearLayout>

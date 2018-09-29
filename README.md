@@ -77,7 +77,7 @@ layout/first_layout.xml
     <Button
         android:id="@+id/button_1"
         android:text="Button 1"
-        android:layout_width="match_parent"
+        android:layout_width="match_parent" 
         android:layout_height="wrap_content" />
 </LinearLayout>
 ```
@@ -93,3 +93,6 @@ C-F2		stop
 + 编辑相关
 
 Ctrl + Alt + L 格式化代码
+
++ 视图相关
+查看类的组成结构：菜单View-->Tool Windows-->Structure
