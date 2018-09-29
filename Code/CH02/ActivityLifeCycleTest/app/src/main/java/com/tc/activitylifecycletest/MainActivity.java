@@ -10,6 +10,13 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        String strTmp = "Something need to be saved.";
+        outState.putString("data_key", strTmp);
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
         Toast.makeText(MainActivity.this, "onStart()", Toast.LENGTH_SHORT).show();
@@ -50,13 +57,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (savedInstanceState != null) {
+            String strTmp = savedInstanceState.getString("data_key");
+
+            Toast.makeText(MainActivity.this, strTmp, Toast.LENGTH_SHORT).show();
+        }
+
         Button btnStartNormal = findViewById(R.id.btn_start_normal);
         Button btnStartDialog = findViewById(R.id.btn_start_dialog);
 
         btnStartNormal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle bd = new Bundle();
+                bd.putString("data", "This is string from main activity.");
                 Intent intent = new Intent(MainActivity.this, NormalActivity.class);
+                intent.putExtras(bd);
+
                 startActivity(intent);
             }
         });
