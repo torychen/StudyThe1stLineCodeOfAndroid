@@ -1,3 +1,5 @@
+*.ser
+
 # Built application files
 *.apk
 *.ap_
