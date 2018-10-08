@@ -1,5 +1,6 @@
 package com.tory.uiwidgettest;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -27,10 +28,15 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ProgressDialog pd = new ProgressDialog(MainActivity.this);
+                pd.setCancelable(true);
+                pd.setMessage("This is a progress dialog");
+                pd.show();
+
                 AlertDialog.Builder ad = new AlertDialog.Builder(MainActivity.this);
                 ad.setTitle("This is an AlertDialog");
-                ad.setMessage("Something important");
-                ad.setCancelable(false);
+                ad.setMessage("Loading");
+                ad.setCancelable(true);
                 ad.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -46,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 });
 
                 ad.show();
-
 
                 String str = editText.getText().toString();
                 Toast.makeText(MainActivity.this, str, Toast.LENGTH_SHORT).show();
