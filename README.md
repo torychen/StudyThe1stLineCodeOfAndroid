@@ -96,3 +96,7 @@ Ctrl + Alt + L 格式化代码
 
 + 视图相关
 查看类的组成结构：菜单View-->Tool Windows-->Structure
+
++ 默认模板  
+
+修改 <install root>\plugins\android\lib\templates\activities\common\root\res\layout\simple.xml.ftl
