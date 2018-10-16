@@ -21,6 +21,17 @@ At office, use TortoiseGit, need to generate PuTTYgen required key as the follow
 
 
 #  编程笔记
+
+## 真机调试
+[先按照OEM对应的驱动](https://developer.android.com/studio/run/oem-usb)
+
+## timer 和 timertask 里不能更新UI。
+
+android之timer和timertask是否运行在主线程中解答
+timer和timertask是否运行在主线程中？答案是否定的。
+https://blog.csdn.net/qq_16628781/article/details/51865787
+
+
 ## XML基础
 tag（标签），attributes:name="value"（属性）， content（内容）， node（节点）
 
@@ -93,6 +104,12 @@ C-F2		stop
 + 编辑相关
 
 Ctrl + Alt + L 格式化代码
+
+F11/S-F11      设置/查看 书签  
+
+Ctrl + Alt + Left/Right 后退/前进导航 | Navigate back/forward
+
+Ctrl + Shift + Backspace 向最近编辑导航 | Navigate to last edit location           
 
 + 视图相关
 查看类的组成结构：菜单View-->Tool Windows-->Structure
