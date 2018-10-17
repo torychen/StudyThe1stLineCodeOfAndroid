@@ -1,7 +1,8 @@
 package com.tory.theopenglestest;
 
+//Works on both the Emulator and XiaoMi Max 2. 2018.10.17
+
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
