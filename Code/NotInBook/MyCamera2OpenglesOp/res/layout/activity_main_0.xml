@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_overlay">
+
+    <TextureView
+        android:id="@+id/id_textureview"
+        android:layout_width="960px"
+        android:layout_height="720px" 
+        android:layout_centerInParent="true"/>
+    
+    <Button
+        android:id="@+id/btn_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_shutter_background"
+        android:text="Color"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="10dip"/>
+     
+    <Button
+        android:id="@+id/btn_shutter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_shutter_background"
+        android:text="Photo"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" 
+        android:layout_marginBottom="10dip"/>
+    
+    <Button
+        android:id="@+id/btn_mirror"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_shutter_background"
+        android:text="Mirror"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dip"/>
+
+</RelativeLayout>

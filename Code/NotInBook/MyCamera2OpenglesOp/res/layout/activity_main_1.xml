@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_overlay">
+    <TextView
+        android:id="@+id/videopath0"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#f8fff8"
+        android:text="Camera2 GLSurfaceView"
+        android:textSize="22sp"/>
+    <RelativeLayout
+            android:id="@+id/previewLayout"
+            android:layout_width="640px"
+            android:layout_height="480px"
+            android:layout_below="@id/videopath0">
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/videopath1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/previewLayout"
+        android:layout_marginTop="10dp"
+        android:background="#f8fff8"
+        android:text="Camera2 TextureView"
+        android:textSize="22sp"/>
+    <TextureView
+        android:id="@+id/id_textureview"
+        android:layout_width="640px"
+        android:layout_height="480px" 
+        android:layout_below="@id/videopath1"/>
+    
+    <Button
+        android:id="@+id/btn_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_shutter_background"
+        android:text="Color"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="10dip"/>
+     
+    <Button
+        android:id="@+id/btn_shutter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_shutter_background"
+        android:text="Play"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" 
+        android:layout_marginBottom="10dip"/>
+    
+    <SeekBar
+        android:id="@+id/id_seekBar"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="15dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" 
+        android:max="100"
+        android:progress="50"/>
+        
+    <Button
+        android:id="@+id/btn_mirror"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_shutter_background"
+        android:text="Mirror"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dip"/>
+
+</RelativeLayout>
