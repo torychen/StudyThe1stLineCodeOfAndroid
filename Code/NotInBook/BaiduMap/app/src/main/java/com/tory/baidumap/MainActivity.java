@@ -25,18 +25,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //What the following for?
     public LocationClient mLocationClient;//why public
-    private MyLocationListener myListener = new MyLocationListener();
+    private MyLocationListener myListener;
     private MyLocationData locData;
 
     private Button mBtnReset;
     private Button mBtnSatellite;
     private Button mBtnNormal;
 
-    private LatLng mlatLng;
+    private LatLng mLatLng;
 
     private boolean mIsFirstLoc;
-
-
 
 
     // Used to load the 'native-lib' library on application startup.
@@ -56,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         mIsFirstLoc = true;
+
+        myListener = new MyLocationListener();
 
         initView();
 
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return;
             }
 
-            mlatLng = new LatLng(bdLocation.getLatitude(),
+            mLatLng = new LatLng(bdLocation.getLatitude(),
                     bdLocation.getLongitude());
 
             locData = new MyLocationData.Builder()
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnReset:
-                MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newLatLng(mlatLng);
+                MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newLatLng(mLatLng);
                 mBaiduMap.animateMapStatus(mapStatusUpdate);
                 break;
             case R.id.btnSatellite:
