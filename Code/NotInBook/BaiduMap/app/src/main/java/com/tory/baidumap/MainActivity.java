@@ -169,6 +169,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnReset:
                 MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newLatLng(mLatLng);
                 mBaiduMap.animateMapStatus(mapStatusUpdate);
+
                 break;
             case R.id.btnSatellite:
                 mBaiduMap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
