@@ -1,27 +1,21 @@
 package com.tory.baidumap;
 
-import android.app.Application;
-import android.location.Location;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.map.BaiduMap;
-import com.baidu.mapapi.map.DotOptions;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
-import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -120,15 +114,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mlatLng = new LatLng(bdLocation.getLatitude(),
                     bdLocation.getLongitude());
 
-            double latitude = bdLocation.getLatitude();
-            double longitude = bdLocation.getLongitude();
-            float accuracy = bdLocation.getRadius();
-
             locData = new MyLocationData.Builder()
-                    .accuracy(accuracy)
+                    .accuracy(bdLocation.getRadius())
                     // 此处设置开发者获取到的方向信息，顺时针0-360
-                    .direction(100).latitude(latitude)
-                    .longitude(longitude).build();
+                    .direction(100)
+                    .latitude(bdLocation.getLatitude())
+                    .longitude(bdLocation.getLongitude())
+                    .build();
 
             mBaiduMap.setMyLocationData(locData);
 
