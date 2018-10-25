@@ -1,10 +1,16 @@
 package com.tory.baidumap;
 
+import android.app.Application;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.baidu.mapapi.map.MapView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private MapView mMapView = null;
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -16,10 +22,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Example of a call to a native method
-        TextView tv = (TextView) findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());
+        MyApplication application = (MyApplication) getApplication();
+        Toast.makeText(MainActivity.this, application.getAppName(), Toast.LENGTH_SHORT ).show();
+
+        mMapView = (MapView) findViewById(R.id.bmapView);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        mMapView.onDestroy();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mMapView.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mMapView.onPause();
+    }
+
+
 
     /**
      * A native method that is implemented by the 'native-lib' native library,
