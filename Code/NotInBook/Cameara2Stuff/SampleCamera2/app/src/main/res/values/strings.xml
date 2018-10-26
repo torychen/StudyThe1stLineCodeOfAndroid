@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SampleCamera2</string>
+
+    <string name="action_preview">Preview</string>
+</resources>
