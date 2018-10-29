@@ -16,5 +16,7 @@ public class HelloWorldActivity extends AppCompatActivity {
         Log.d("HelloWorldActivity", "onCreate execute");
         Log.i(TAG, "onCreate: this is log.i().");
         Log.d("data", "onCreate: by tag data");
+
+
     }
 }
