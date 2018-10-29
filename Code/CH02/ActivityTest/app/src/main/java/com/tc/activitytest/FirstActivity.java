@@ -14,9 +14,23 @@ import android.widget.Toast;
 public class FirstActivity extends AppCompatActivity {
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        String tmp = "This quit message";
+        outState.putString("key_when_quit", tmp);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_layout);
+
+        if (savedInstanceState != null) {
+            String tmp = savedInstanceState.getString("key_when_quit");
+            Toast.makeText(this, "the quit message is :" + tmp, Toast.LENGTH_SHORT).show();
+        }
+
         Button btn1 = findViewById(R.id.btn_for_toast);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +99,9 @@ public class FirstActivity extends AppCompatActivity {
                 break;
             case R.id.item_remove:
                 Toast.makeText(this, "You click Remove", Toast.LENGTH_SHORT).show();
+               break;
+            case R.id.item_search:
+                Toast.makeText(this, "You click Search", Toast.LENGTH_SHORT).show();
                 break;
 
             default:

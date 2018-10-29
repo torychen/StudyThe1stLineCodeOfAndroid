@@ -1,20 +1,16 @@
 package com.tc.activitylifecycletest;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        String strTmp = "Something need to be saved.";
-        outState.putString("data_key", strTmp);
-    }
+public class MainActivity extends Activity {
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onStart() {
@@ -57,11 +53,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (savedInstanceState != null) {
-            String strTmp = savedInstanceState.getString("data_key");
 
-            Toast.makeText(MainActivity.this, strTmp, Toast.LENGTH_SHORT).show();
-        }
 
         Button btnStartNormal = findViewById(R.id.btn_start_normal);
         Button btnStartDialog = findViewById(R.id.btn_start_dialog);
