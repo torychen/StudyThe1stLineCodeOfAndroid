@@ -1,20 +1,20 @@
 package com.tory.listviewtest;
 
 public class Fruit {
-    private String m_name;
-    private int m_imageID;
+    private String mName;
+    private int mImageID;
 
     public Fruit(String name, int imageID) {
-        m_name = name;
-        m_imageID = imageID;
+        mName = name;
+        mImageID = imageID;
     }
 
     public String getName()
     {
-        return m_name;
+        return mName;
     }
 
     public int getImageID() {
-        return m_imageID;
+        return mImageID;
     }
 }

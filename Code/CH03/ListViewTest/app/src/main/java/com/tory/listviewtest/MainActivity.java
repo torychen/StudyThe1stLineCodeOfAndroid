@@ -14,7 +14,12 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private List<Fruit> fruitList = new ArrayList<>();
 
-    /*  implementation part 1
+    //just show string
+    private final boolean step1 = false;
+
+    private final boolean step2 = true;
+
+    /*  implementation part 1 */
     private  String[] data = {
             "Apple",
             "Banana",
@@ -23,30 +28,41 @@ public class MainActivity extends AppCompatActivity {
             "Pear",
             "Grape",
             "Pineapple","Strawberry","Cherry","Mango" };
-    */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initFruits(); // 初始化水果数据
-        FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);
-        ListView listView = findViewById(R.id.list_view);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long ID) {
-                Fruit fruit = fruitList.get(position);
-                Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        /* implementation part 1 */
+        if (step1) {
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, data);
+            ListView lv = findViewById(R.id.list_view);
+            lv.setAdapter(adapter);
+        }
+
+        /* part 2 */
+        if (step2){
+            initFruits(); // 初始化水果数据
+            FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);
+            ListView listView = findViewById(R.id.list_view);
+            listView.setAdapter(adapter);
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long ID) {
+                    Fruit fruit = fruitList.get(position);
+                    Toast.makeText(MainActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
 
 
-        /* implementation part 1
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, data);
-        ListView lv = findViewById(R.id.list_view);
-        lv.setAdapter(adapter);
-        */
+
+
+
+
+
     }
 
     private void initFruits() {
