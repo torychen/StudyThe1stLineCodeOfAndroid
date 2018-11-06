@@ -2,21 +2,21 @@ package com.tory.recyleviewtest;
 
 public class Fruit {
 
-    private String name;
+    private String mName;
 
-    private int imageId;
+    private int mImageId;
 
     public Fruit(String name, int imageId) {
-        this.name = name;
-        this.imageId = imageId;
+        this.mName = name;
+        this.mImageId = imageId;
     }
 
     public String getName() {
-        return name;
+        return mName;
     }
 
     public int getImageId() {
-        return imageId;
+        return mImageId;
     }
 
 }

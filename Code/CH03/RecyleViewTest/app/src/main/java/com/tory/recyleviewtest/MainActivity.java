@@ -2,6 +2,7 @@ package com.tory.recyleviewtest;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -14,15 +15,26 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Fruit> fruitList = new ArrayList<Fruit>();
 
+    private final boolean gridLayout = true;
+    private final boolean StaggeredLayout =false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initFruits();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        StaggeredGridLayoutManager layoutManager = new
-                StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
+
+        if (StaggeredLayout) {
+            StaggeredGridLayoutManager layoutManager = new
+                    StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+            recyclerView.setLayoutManager(layoutManager);
+
+        } else if (gridLayout) {
+            GridLayoutManager layoutManager = new GridLayoutManager(MainActivity.this,5);
+            recyclerView.setLayoutManager(layoutManager);
+        }
+
         FruitAdapter adapter = new FruitAdapter(fruitList);
         recyclerView.setAdapter(adapter);
     }
