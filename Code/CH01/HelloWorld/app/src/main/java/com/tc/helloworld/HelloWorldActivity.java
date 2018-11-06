@@ -22,7 +22,7 @@ public class HelloWorldActivity extends AppCompatActivity {
             Log.d(TAG, "linkMySql: begin to link sql.");
 
             Class.forName("com.mysql.jdbc.Driver");
-            java.sql.Connection cn= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/","root","DB123456");
+            java.sql.Connection cn= DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/student","root","DB123456");
 
             Statement st=cn.createStatement();
 
