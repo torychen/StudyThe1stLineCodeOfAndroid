@@ -9,8 +9,13 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent();
-        startActivity(intent, .SubActivity.class);
+        Intent intent = new Intent(MainActivity.this, SubActivity.class);
+        MyPerson person = new MyPerson();
+        person.setAge(10);
+        person.setName("Tory");
+
+        intent.putExtra("person_data", person);
+        startActivity(intent);
     }
 
     @Override

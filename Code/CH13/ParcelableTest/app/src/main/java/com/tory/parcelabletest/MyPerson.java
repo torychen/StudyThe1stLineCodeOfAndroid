@@ -8,7 +8,11 @@ public class MyPerson implements Parcelable{
     private int age;
     private String name;
 
-    public  MyPerson(Parcel in) {
+    MyPerson(){
+
+    }
+
+    private MyPerson(Parcel in) {
         this.age = in.readInt();
         this.name = in.readString();
     }
