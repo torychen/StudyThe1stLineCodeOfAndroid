@@ -23,7 +23,9 @@
 <node CREATED="1541646142354" ID="Freemind_Link_285281217" MODIFIED="1541646455800" POSITION="right" TEXT="IntentService&#xa;&#x521b;&#x5efa;&#x4e00;&#x4e2a;&#x5f02;&#x6b65;&#xff0c;&#x53ef;&#x4ee5;&#x81ea;&#x52a8;&#x505c;&#x6b62;&#x7684;&#x670d;&#x52a1;&#x3002;" VSHIFT="41">
 <node CREATED="1541646460045" ID="Freemind_Link_594501552" MODIFIED="1541646726592" TEXT="MyIntentService &#x7ee7;&#x627f; IntentService&#xff0c;&#xa;&#x5fc5;&#x987b;&#x63d0;&#x4f9b; &#x516c;&#x6709;&#xff0c;&#x65e0;&#x53c2;&#x6784;&#x9020;&#x51fd;&#x6570;&#x3010;&#x9ed8;&#x8ba4;&#x6784;&#x9020;&#x51fd;&#x6570;&#x3011;&#xff0c;&#x4e14;&#x5fc5;&#x987b;&#x8c03;&#x7528;&#x8d85;&#x7c7b;&#x6709;&#x53c2;&#x6784;&#x9020;&#x51fd;&#x6570;&#xa;MyIntentService extend IntentService&#xa;{&#xa; MyIntentService&#xff08;&#xff09; {super&#xff08;string&#xff09;}&#xa;}&#xa;&#xa;&#x91cd;&#x5199; onHandleIntent&#xff08;&#xff09;&#x65b9;&#x6cd5;&#x3002;&#xa;&#xa;&#xa;"/>
 </node>
-<node CREATED="1541646785374" ID="Freemind_Link_850702704" MODIFIED="1541646790796" POSITION="right" TEXT="&#x4f8b;&#x5b50;&#xff1a;&#x4e0b;&#x8f7d;"/>
+<node CREATED="1541646785374" ID="Freemind_Link_850702704" MODIFIED="1541648328575" POSITION="right" TEXT="&#x4f8b;&#x5b50;&#xff1a;&#x4e0b;&#x8f7d;" VSHIFT="74">
+<icon BUILTIN="bookmark"/>
+</node>
 <node CREATED="1541584858360" ID="Freemind_Link_1160626152" MODIFIED="1541584863001" POSITION="left" TEXT="&#x521b;&#x5efa;&#x5b50;&#x7ebf;&#x7a0b;">
 <node CREATED="1541584863891" ID="Freemind_Link_509056245" MODIFIED="1541585100648" TEXT="1. &#x7ee7;&#x627f; Thread&#xa;MyThread extend Thread{&#xa; run&#xff08;&#xff09;&#xa;}&#xa;&#xa;Mythread.start()&#xa;---&#xa;2. &#x5b9e;&#x73b0; Runnalb &#x63a5;&#x53e3;&#xa;MyThread implements Runnable {&#xa;  run&#xff08;&#xff09;&#xa;}&#xa;new Thread&#xff08;mythread&#xff09;.start&#xff08;&#xff09;&#xff1b;&#xa;---&#xa;3. &#x533f;&#x540d;&#x7c7b;&#xa;new Thread&#xff08;new Runnable&#xff08;&#xff09;{&#xa;run&#xff08;&#xff09;&#xa;{&#xa;  do something&#xa;}&#xa;}&#xff09;.start&#xff08;&#xff09;&#xff1b;&#xa;"/>
 </node>
