@@ -25,13 +25,17 @@
 <node CREATED="1541687490834" ID="Freemind_Link_1504656259" MODIFIED="1541687493214" POSITION="left" TEXT="&#x53c2;&#x8003;">
 <node CREATED="1541687495602" ID="Freemind_Link_1240390713" MODIFIED="1541687597592" TEXT="&#x6df1;&#x5165;JVM&#x5783;&#x573e;&#x56de;&#x6536;&#x7b97;&#x6cd5;&#xa;https://blog.csdn.net/dd864140130/article/details/50084471&#xa;------------&#xa;&#x6df1;&#x5165;JVM&#x5bf9;&#x8c61;&#x5f15;&#x7528;&#xa;https://blog.csdn.net/dd864140130/article/details/49885811&#xa;------------&#xa;&#x53f2;&#x4e0a;&#x6700;&#x5168;Java&#x9762;&#x8bd5;&#x9898;&#xff08;&#x5e26;&#x5168;&#x90e8;&#x7b54;&#x6848;&#xff09;&#xa;https://blog.csdn.net/linzhiqiang0316/article/details/80473906"/>
 </node>
-<node CREATED="1541690238481" ID="Freemind_Link_480807598" MODIFIED="1541690245920" POSITION="left" TEXT="&#x6570;&#x5b57;&#x5bab;&#x6bbf;" VSHIFT="66">
-<node CREATED="1541690247267" ID="Freemind_Link_902165901" MODIFIED="1541690389047" TEXT="&#x6570;&#x5b57;&#xa;&#x94c3;&#x8863;&#x8033;&#x5c71;&#x5bfa;&#xa;&#x821e;&#x9e7f;&#x68cb;&#x53d1;&#x9152;"/>
-<node CREATED="1541690376468" ID="Freemind_Link_481310010" MODIFIED="1541690381966" TEXT="&#x4eba;&#x4f53;">
-<node CREATED="1541690480560" ID="Freemind_Link_242021267" MODIFIED="1541690501287" TEXT="&#x773c;&#x8033;&#x9f3b;&#x820c;&#x53e3;&#xa;"/>
+<node CREATED="1541770792826" ID="Freemind_Link_1091317282" MODIFIED="1541770804195" POSITION="left" TEXT="&#x6570;&#x636e;&#x7ed3;&#x6784;" VSHIFT="70">
+<node CREATED="1541770806695" ID="Freemind_Link_1266789697" MODIFIED="1541770811538" TEXT="Map">
+<node CREATED="1541770812551" ID="Freemind_Link_686460137" MODIFIED="1541771058380" TEXT="HashMap&#xa;--------------&#xa;Map&lt;String, String&gt; map = new HashMap&lt;&gt;();&#xa;map.put(&quot;a&quot;, &quot;aaa&quot;);&#xa;map.put(&quot;b&quot;, &quot;bbb&quot;);&#xa;&#xa;Iterator iterator = map.keySet().iterator();&#xa;while (iterator.hasNext()) {&#xa;    Object key = iterator.next();&#xa;    Log.d(TAG, &quot;onCreate: map key is&quot; + key.toString() + &quot; map value is &quot; + map.get(key));&#xa;}"/>
 </node>
-<node CREATED="1541690404770" ID="Freemind_Link_507168816" MODIFIED="1541690407098" TEXT="&#x5730;&#x70b9;">
-<node CREATED="1541690409740" ID="Freemind_Link_1420418057" MODIFIED="1541690472026" TEXT="&#x978b;&#x67dc;-&#x5ba2;&#x5385;-&#x9633;&#x53f0;-&#x5c0f;&#x5367;&#xa;&#x50a8;&#x7269;-&#x4e3b;&#x5367;-&#x4e66;&#x623f;-&#x5395;&#x6240;-&#x9910;&#x5385;-&#x53a8;&#x623f;"/>
+<node CREATED="1541770893735" ID="Freemind_Link_1400148115" MODIFIED="1541770926953" TEXT="Collection" VSHIFT="41">
+<node CREATED="1541770928135" ID="Freemind_Link_1363312761" MODIFIED="1541770929811" TEXT="List">
+<node CREATED="1541770930512" ID="Freemind_Link_1985746245" MODIFIED="1541770933971" TEXT="ArrayList"/>
+</node>
+<node CREATED="1541770934743" ID="Freemind_Link_845306306" MODIFIED="1541771100129" TEXT="Set" VSHIFT="21">
+<node CREATED="1541771093511" ID="Freemind_Link_1304607985" MODIFIED="1541771098242" TEXT="TreeSet"/>
+</node>
 </node>
 </node>
 </node>

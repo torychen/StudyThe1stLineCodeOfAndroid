@@ -15,8 +15,17 @@ public class SubActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        MyPerson person = intent.getParcelableExtra("person_data");
+        MyPerson person = intent.getParcelableExtra("pperson");
+        if (person != null) {
 
-        Toast.makeText(this, "The person age is " + person.getAge() + " name is " + person.getName(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "The person age is " + person.getAge() + " name is " + person.getName(), Toast.LENGTH_SHORT).show();
+        }
+
+        MyPersonSerializable personSerializable = (MyPersonSerializable) intent.getSerializableExtra("sperson");
+        if (personSerializable != null) {
+
+            Toast.makeText(this, "The person age is " + personSerializable.getAge() + " name is " + personSerializable.getName(), Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
