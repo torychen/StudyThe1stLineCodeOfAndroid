@@ -1,10 +1,14 @@
 package com.tory.parcelabletest;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
@@ -36,6 +40,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    private AlertDialog mDialog;
+    CountDownTimer timer= new CountDownTimer(6000,1000) {
+        @Override
+        public void onTick(long arg0) {
+            int thetime=(int) (arg0/1000);
+            if(mDialog!=null){
+                mDialog.getButton(DialogInterface.BUTTON_NEGATIVE).setText("time left" + thetime);
+            }
+        }
+
+
+        @Override
+        public void onFinish() {
+            if(mDialog!=null){
+                mDialog.dismiss();
+            }
+        }
+    };
+
+    private void dialog(){
+        AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Title");
+        builder.setMessage("Wait to launch sub activity");
+        builder.setNegativeButton("something not sure",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                timer.cancel();//取消倒计时
+            }
+        });
+        mDialog=builder.create();
+        mDialog.show();
+        timer.start();
+    }
+
     @Override
     public void onClick(View view) {
         Intent [] intent = new Intent[1];
@@ -48,6 +87,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 long atTime = SystemClock.elapsedRealtime() + 10*1000;//System.currentTimeMillis() 1970.1.1
 
                 alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, atTime,pi);
+
+                //Try to show a AlertDialog with count down timer.
+                dialog();
+
 
 
                 break;
