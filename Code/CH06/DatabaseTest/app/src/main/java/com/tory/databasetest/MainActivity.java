@@ -19,9 +19,9 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    final private static boolean forFile = true;
-    final private static boolean forSharedPreferrence = false;
-    final private static boolean forDatabase = false;
+    //final private static boolean forFile = true;
+    //final private static boolean forSharedPreferrence = false;
+    //final private static boolean forDatabase = false;
 
     private static final String TAG = "MainActivity";
 
