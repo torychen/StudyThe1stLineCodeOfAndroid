@@ -1,5 +1,6 @@
 package com.tory.databasetest;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSave.setOnClickListener(this);
     }
 
+    /*
+    //File stream operation ok 2018.11.9
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -80,6 +84,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
 
                 }
+                break;
+        }
+
+    }
+    */
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnLoad:
+                SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+
+                String s1 = "";
+                s1 = sharedPreferences.getString("string", s1);
+                Toast.makeText(this, "string from sp is " + s1, Toast.LENGTH_SHORT).show();
+
+
+
+                break;
+            case R.id.btnSave:
+                try {
+
+                    SharedPreferences.Editor editor = getPreferences(MODE_PRIVATE).edit();
+                    editor.putBoolean("boolean", true);
+                    editor.putFloat("float", 5.2f);
+                    editor.putString("string", "hello shared preference");
+
+                    editor.apply();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return;
+                }
+
+
                 break;
         }
 
