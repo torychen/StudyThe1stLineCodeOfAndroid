@@ -17,6 +17,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //final private static boolean forFile = true;
@@ -41,6 +44,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnLoad.setOnClickListener(this);
         btnSave.setOnClickListener(this);
+
+        /* test map
+        Map<String, String> map = new HashMap<>();
+        map.put("a", "aaa");
+        map.put("b", "bbb");
+        map.put("c", "ccc");
+        map.put("d", "ddd");
+        map.put("e", "eee");
+
+        Iterator iterator = map.keySet().iterator();
+        while (iterator.hasNext()) {
+            Object key = iterator.next();
+            Log.d(TAG, "onCreate: map key is" + key.toString() + " map value is " + map.get(key));
+        }
+        */
+
     }
 
     /*
