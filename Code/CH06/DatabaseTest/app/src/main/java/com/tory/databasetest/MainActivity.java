@@ -1,6 +1,7 @@
 package com.tory.databasetest;
 
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText metInput;
     TextView mtvReadBack;
     final static private String mFileName = "mydata";
+    private MyDBHelper mdbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,14 +71,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     "price real, " +
                     "page integer, " +
                     "name text)";*/
+        mdbHelper = new MyDBHelper(MainActivity.this, "Book.db", null, 1);
 
         Button btnCreate = findViewById(R.id.btnCreate);
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MyDBHelper dbHelper = new MyDBHelper(MainActivity.this, "Book.db", null, 1);
-                SQLiteDatabase db = dbHelper.getWritableDatabase();
-                //db.execSQL("insert into Book(author, price, page, name)", new String []{"Aaa", "10.5", "100", "Aaa's book"});
+
+                SQLiteDatabase db = mdbHelper.getWritableDatabase();
+
+            }
+        });
+
+        Button btnAdd = findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = mdbHelper.getWritableDatabase();
+                db.execSQL("insert into Book(author, price, page, name) values (?,?,?,?)", new String []{"Aaa", "10.5", "100", "Aaa's book"});
+                db.close();
+            }
+        });
+
+        Button btnQuery = findViewById(R.id.btnQuery);
+        btnQuery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = mdbHelper.getWritableDatabase();
+                Cursor cursor = db.rawQuery("select * from Book", null);
+                if (cursor.moveToFirst()) {
+                    do {
+                        String author = cursor.getString(cursor.getColumnIndex("author"));
+                        String price = cursor.getString(cursor.getColumnIndex("price"));
+                        String name = cursor.getString(cursor.getColumnIndex("name"));
+
+                        Toast.makeText(MainActivity.this, author + price + name, Toast.LENGTH_SHORT).show();
+
+                    } while (cursor.moveToNext());
+                }
+
             }
         });
 
