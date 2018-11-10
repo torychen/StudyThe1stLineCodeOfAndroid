@@ -1,6 +1,8 @@
 package com.tory.databasetest;
 
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -59,6 +61,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.d(TAG, "onCreate: map key is" + key.toString() + " map value is " + map.get(key));
         }
         */
+
+        /*
+        * "create table Book(" +
+                    "id integer primary key autoincrement, " +
+                    "author text, " +
+                    "price real, " +
+                    "page integer, " +
+                    "name text)";*/
+
+        Button btnCreate = findViewById(R.id.btnCreate);
+        btnCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MyDBHelper dbHelper = new MyDBHelper(MainActivity.this, "Book.db", null, 1);
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                //db.execSQL("insert into Book(author, price, page, name)", new String []{"Aaa", "10.5", "100", "Aaa's book"});
+            }
+        });
 
     }
 
