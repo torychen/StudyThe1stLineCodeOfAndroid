@@ -138,13 +138,16 @@
 </node>
 <node COLOR="#000000" CREATED="1540799199962" ID="Freemind_Link_1080279764" MODIFIED="1541841332903" TEXT="Intent&#xa;&#x7528;&#x4e8e;&#x6307;&#x660e;&#x5f53;&#x524d;&#x6d3b;&#x52a8;&#x60f3;&#x8981;&#x6267;&#x884c;&#x7684;&#x52a8;&#x4f5c;&#xff0c;&#x4ee5;&#x53ca;&#x53cc;&#x5411;&#x4f20;&#x9012;&#x6570;&#x636e;&#x3002;&#xa;&#xa;&#x8fd8;&#x53ef;&#x4ee5;&#x7528;&#x6765;&#x53d1;&#x9001; &#x5e7f;&#x64ad;&#xa;&#xa;&#x542f;&#x52a8;&#x670d;&#x52a1;&#xa;&#xa;&#x5ef6;&#x65f6;&#x542f;&#x52a8; Notification&#xff0c; Alarm" VSHIFT="79">
 <edge COLOR="#009999" WIDTH="4"/>
+<node CREATED="1541841491840" ID="Freemind_Link_276196206" MODIFIED="1541863815322" TEXT=" &#x663e;&#x793a;&#x542f;&#x52a8;&#x6d3b;&#x52a8;&#xa;Intent(Context, SubActivity)&#xa;&#xa;&#x9690;&#x5f0f;&#x542f;&#x52a8;&#x6d3b;&#x52a8;&#xa;Intent(Action)&#xa;Intent.addCategory()&#xa;&#xa;Context.startActivity()&#x6216;Activity.startActivityForResult()&#xa;&#xa;&#x53d1;&#x751f;&#x5e7f;&#x64ad;&#xa;Context.sendBroadcast()&#xa;&#xa;&#x542f;&#x52a8;&#x670d;&#x52a1;&#xa;Context.startService()&#xa;&#xa;&#x4f20;&#x9012;&#x6570;&#x636e;&#xa;Intent.putInt()&#xa;Intent.putExtra()&#xa;Intent.getExtraParcelable()&#xa;Intent.getExtraSerailizable()">
+<icon BUILTIN="bookmark"/>
+</node>
+<node CREATED="1541863938713" ID="Freemind_Link_214875048" MODIFIED="1541864044478" TEXT="Intent 5 &#x5927;&#x8981;&#x7d20;&#xa;1. ComponentName &#x5373; Activtiy.class&#xa;2. Data&#xa;3. Action&#xa;4. Category&#xa;5. Extra&#xa;6. flag &#x6807;&#x8bb0;&#xa;&#xa;--------------&#xa;Android&#x4e2d;Intent&#x7ec4;&#x4ef6;&#x8be6;&#x89e3;&#xa;https://blog.csdn.net/zuolongsnail/article/details/6574211"/>
 <node COLOR="#000000" CREATED="1540799369664" ID="Freemind_Link_1544883378" MODIFIED="1541482852446" TEXT="&#x663e;&#x5f0f;Intent">
 <edge COLOR="#009999" WIDTH="4"/>
 <node COLOR="#000000" CREATED="1540799419891" ID="Freemind_Link_686807948" MODIFIED="1541482852444" TEXT="&#x660e;&#x786e;&#x7684;&#x544a;&#x77e5;&#x7cfb;&#x7edf;&#xff0c;&#x6211;&#x60f3;&#x8981;&#x8df3;&#x8f6c;&#x5230;&#x4e0b;&#x4e00;&#x4e2a;&#x6d3b;&#x52a8;&#x3002;&#xa;Intent intent = new Intent(this activity, next activity)&#xa;startActivity(intent)">
 <edge COLOR="#009999" WIDTH="4"/>
 </node>
 </node>
-<node CREATED="1541841491840" ID="Freemind_Link_276196206" MODIFIED="1541841668182" TEXT=" &#x663e;&#x793a;&#x542f;&#x52a8;&#x6d3b;&#x52a8;&#xa;Intent(Context, SubActivity)&#xa;&#xa;&#x9690;&#x5f0f;&#x542f;&#x52a8;&#x6d3b;&#x52a8;&#xa;Intent(Action)&#xa;Intent.addCategory()&#xa;&#xa;&#x53d1;&#x751f;&#x5e7f;&#x64ad;&#xa;&#xa;&#x542f;&#x52a8;&#x670d;&#x52a1;&#xa;&#xa;&#x4f20;&#x9012;&#x6570;&#x636e;&#xa;Intent.putInt()&#xa;Intent.putExtra()&#xa;Intent.getExtraParcelable()&#xa;Intent.getExtraSerailizable()"/>
 <node COLOR="#000000" CREATED="1540799382949" ID="Freemind_Link_1161878081" MODIFIED="1541482852443" TEXT="&#x9690;&#x5f0f;Intent" VSHIFT="66">
 <edge COLOR="#009999" WIDTH="4"/>
 <node COLOR="#000000" CREATED="1540799517745" ID="Freemind_Link_1358636118" MODIFIED="1541482852440" TEXT="&#x901a;&#x8fc7; &lt;intent-filter&gt; &#x4e2d;&#x7684;&lt;action&gt;, &lt;category&gt; &#x6807;&#x7b7e;&#x3002;&#xa;&#x7531;&#x7cfb;&#x7edf;&#x53bb;&#x5224;&#x65ad;&#xff0c;&#x5e94;&#x8be5;&#x6267;&#x884c;&#x54ea;&#x4e00;&#x4e2a;&#x6d3b;&#x52a8;&#x3002;&#xa;&#xa;&#x6bcf;&#x4e2a;Intent &#x53ea;&#x80fd;&#x6307;&#x5b9a;&#x4e00;&#x4e2a; action&#xff0c;&#x4f46;&#x662f;&#x53ef;&#x4ee5;&#x591a;&#x4e2a; category&#xa;&#xa;Intent &#x53ef;&#x4ee5;&#x542f;&#x52a8; &#x5176;&#x5b83;&#x5e94;&#x7528;&#x7a0b;&#x5e8f;&#x7684;&#x6d3b;&#x52a8;&#x3002;&#x5982;&#x4e0a;&#x7f51;&#x3002;&#xa;&#xa;&#x3010;&#x7c7b;&#x4f3c;&#x4e8e;&#x8d23;&#x4efb;&#x94fe;&#x6a21;&#x5f0f;&#x3011;&#x6240;&#x6709;&#x6d3b;&#x52a8;&#x88ab;&#x4e32;&#x6210;&#x4e00;&#x4e32;&#x3002;&#x6bcf;&#x4e2a;&#x6d3b;&#x52a8;&#x6709;&#x81ea;&#x5df1;&#x7684;category&#xff0c;&#x5f53;&#x6709;intent &#x542f;&#x52a8;&#x65f6;&#xff0c;category &#x5339;&#x914d;&#x4e0a;&#x7684;&#x54cd;&#x5e94;&#x3002;">
@@ -159,8 +162,9 @@
 <edge COLOR="#009999" WIDTH="4"/>
 </node>
 <node CREATED="1541841279334" ID="Freemind_Link_1026969947" MODIFIED="1541841336959" TEXT="&#x5ef6;&#x65f6;&#x542f;&#x52a8; PendingIntent" VSHIFT="39">
-<node CREATED="1541841291878" ID="Freemind_Link_1213204397" MODIFIED="1541841296818" TEXT="Notificaion"/>
-<node CREATED="1541841297270" ID="Freemind_Link_346656730" MODIFIED="1541841303570" TEXT="Alarm &#x5b9a;&#x65f6;&#x4efb;&#x52a1;"/>
+<node CREATED="1541841291878" ID="Freemind_Link_1213204397" MODIFIED="1541864569344" TEXT="Intent&#xa;PendingIntent(Intent)&#xa;Notificaion.build(PendingIntent)&#xa;NotificationManager.notify(Notification)&#xa;&#xa;"/>
+<node CREATED="1541841297270" ID="Freemind_Link_346656730" MODIFIED="1541864516846" TEXT="Alarm &#x5b9a;&#x65f6;&#x4efb;&#x52a1;&#xa;Intent&#xa;PendingIntent&#xff08;Intent&#xff09;&#xa;AlarmManager.set(PengdingIntent)"/>
+<node CREATED="1541864464853" ID="Freemind_Link_1317041378" MODIFIED="1541864473578" TEXT="SmsManager sms = SmsManager.getDefault();  &#xa;  &#xa;PendingIntent pi = PendingIntent.getBroadcast(SmsActivity.this,0,new Intent(...),0);  &#xa;sms.sendTextMessage(number, null, msg, pi, null);  " VSHIFT="30"/>
 </node>
 </node>
 <node COLOR="#000000" CREATED="1540801698799" ID="Freemind_Link_1476668282" MODIFIED="1541482852433" TEXT="&#x751f;&#x547d;&#x5468;&#x671f;">
