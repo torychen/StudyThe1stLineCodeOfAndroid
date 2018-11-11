@@ -16,7 +16,7 @@
 </node>
 </node>
 <node CREATED="1541484960230" ID="Freemind_Link_675970711" MODIFIED="1541485246418" POSITION="right" TEXT="&#x672c;&#x5730;&#x5e7f;&#x64ad;&#xff0c;&#x53ea;&#x5728;&#x672c;&#x7a0b;&#x5e8f;&#x5185;&#x53d1;&#x9001;&#x3002;&#xa;&#xa;&#x65e0;&#x6cd5;&#x901a;&#x8fc7;&#x9759;&#x6001;&#x6ce8;&#x518c;&#xa;&#xa;&#x4f18;&#x70b9;&#x662f;&#xff1a;&#x53ea;&#x5728;&#x672c;&#x5e94;&#x7528;&#x7a0b;&#x5e8f;&#x6709;&#x6548;&#xff0c;&#x6240;&#x4ee5;&#x4e0d;&#x9700;&#x8981;&#x62c5;&#x5fc3;&#x6570;&#x636e;&#x6cc4;&#x9732;&#x6216;&#x5b89;&#x5168;&#x6f0f;&#x6d1e;" VSHIFT="35">
-<node CREATED="1541485039799" ID="Freemind_Link_1855708612" MODIFIED="1541485108359" TEXT="localBroadcastManager.sendBroadcast(intent);&#xa;&#xa;ocalReceiver = new LocalReceiver();&#xa;localBroadcastManager.registerReceiver(localReceiver,intentFilter);"/>
+<node CREATED="1541485039799" ID="Freemind_Link_1855708612" MODIFIED="1541947228120" TEXT="LocalBroadcastManager.getInstance(Context)&#xa;&#xa;localBroadcastManager.sendBroadcast(intent);&#xa;&#xa;localReceiver = new LocalReceiver();&#xa;localBroadcastManager.registerReceiver(localReceiver,intentFilter);"/>
 </node>
 <node CREATED="1541485304116" ID="Freemind_Link_1568553397" MODIFIED="1541485312418" POSITION="right" TEXT="&#x4f8b;&#x5b50;&#xff1a;&#x5f3a;&#x5236;&#x4e0b;&#x7ebf;" VSHIFT="102"/>
 <node CREATED="1541483233072" ID="Freemind_Link_1026837706" MODIFIED="1541483266594" POSITION="left" TEXT="&#x7cfb;&#x7edf;&#x5e7f;&#x64ad;&#xa;&#x5f00;&#x673a;&#x5b8c;&#x6210;&#x5e7f;&#x64ad;&#xff0c;&#x7535;&#x91cf;&#x53d8;&#x5316;&#x5e7f;&#x64ad;&#x3002;"/>
