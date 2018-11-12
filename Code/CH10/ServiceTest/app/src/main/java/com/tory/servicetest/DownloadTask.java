@@ -23,6 +23,10 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     private boolean isPaused = false;
     private int lastProgress;
 
+    public DownloadTask(DownloadListener listener) {
+        this.listener = listener;
+    }
+
     @Override
     protected Integer doInBackground(String... params) {
         InputStream is = null;

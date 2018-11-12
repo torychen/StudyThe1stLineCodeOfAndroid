@@ -5,6 +5,6 @@ public interface DownloadListener {
     void onSuccess();
     void onPause();
     void onFailed();
-    void onCancelled();
+    void onCanceled();
 
 }
