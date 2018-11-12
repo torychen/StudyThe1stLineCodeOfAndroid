@@ -14,5 +14,8 @@
 <node COLOR="#000000" CREATED="1541686842258" ID="Freemind_Link_801857475" MODIFIED="1541686853703" POSITION="right" TEXT="Service">
 <edge COLOR="#009999" WIDTH="4"/>
 </node>
+<node CREATED="1541864940581" ID="Freemind_Link_1860643679" MODIFIED="1541864989271" POSITION="right" TEXT="Context&#xa;">
+<node CREATED="1541864990422" ID="Freemind_Link_511945648" MODIFIED="1541864996689" TEXT="getSystemService&#x7528;&#x6cd5;&#x603b;&#x7ed3;&#xa;https://blog.csdn.net/nosxcy/article/details/6955001"/>
+</node>
 </node>
 </map>

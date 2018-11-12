@@ -1,10 +1,20 @@
 package com.tory.parcelabletest;
 
+import android.app.AlarmManager;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
+import android.os.SystemClock;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +26,7 @@ import java.lang.ref.WeakReference;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     static  Handler mHandler;
     private static final String TAG = "MainThread";
+    //private enum TYPE{SERAILIZABLE, PERCELABLE};
 
     private static class MyHandler extends Handler {
         private final WeakReference<MainActivity> mActivity;
@@ -29,17 +40,86 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    private AlertDialog mDialog;
+    CountDownTimer timer= new CountDownTimer(6000,1000) {
+        @Override
+        public void onTick(long arg0) {
+            int thetime=(int) (arg0/1000);
+            if(mDialog!=null){
+                mDialog.getButton(DialogInterface.BUTTON_NEGATIVE).setText("time left" + thetime);
+            }
+        }
+
+
+        @Override
+        public void onFinish() {
+            if(mDialog!=null){
+                mDialog.dismiss();
+            }
+        }
+    };
+
+    private void dialog(){
+        AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Title");
+        builder.setMessage("Wait to launch sub activity");
+        builder.setNegativeButton("something not sure",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                timer.cancel();//取消倒计时
+            }
+        });
+        mDialog=builder.create();
+        mDialog.show();
+        timer.start();
+    }
+
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btnGoto2ndActivity:
-                Intent intent = new Intent(MainActivity.this, SubActivity.class);
-                MyPerson person = new MyPerson();
-                person.setAge(10);
-                person.setName("Tory");
+        Intent [] intent = new Intent[1];
+        intent[0] = new Intent(MainActivity.this, SubActivity.class);
+        PendingIntent pi = PendingIntent.getActivities(MainActivity.this, 0, intent, 0);
 
-                intent.putExtra("person_data", person);
-                startActivity(intent);
+        switch (view.getId()) {
+            case R.id.btnAlarm:
+                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                long atTime = SystemClock.elapsedRealtime() + 10*1000;//System.currentTimeMillis() 1970.1.1
+
+                alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, atTime,pi);
+
+                //Try to show a AlertDialog with count down timer.
+                dialog();
+
+
+
+                break;
+            case R.id.btnNotification:
+                NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+                MyPersonSerializable person = new MyPersonSerializable();
+                person.setAge(20);
+                person.setName("notification");
+                intent[0].putExtra("sperson", person);
+
+                Notification notification = new NotificationCompat.Builder(this)
+                                            .setContentTitle("This notificaton")
+                                            .setSmallIcon(R.mipmap.ic_launcher)
+                        .setAutoCancel(true)
+                        .setContentIntent(pi)
+                        .build();
+                manager.notify(1, notification);
+
+
+                break;
+            case R.id.btnGoto2ndActivity:
+                Intent intent2 = new Intent(MainActivity.this, SubActivity.class);
+                MyPerson person2 = new MyPerson();
+                person2.setAge(10);
+                person2.setName("Tory");
+
+                intent2.putExtra("pperson", person2);
+                startActivity(intent2);
 
                 break;
 
@@ -102,6 +182,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         handlerThread.quitSafely();
+
+
+        Button btnAlarm = findViewById(R.id.btnAlarm);
+        btnAlarm.setOnClickListener(this);
+
+        Button btnNotification = findViewById(R.id.btnNotification);
+        btnNotification.setOnClickListener(this);
 
     }
 }

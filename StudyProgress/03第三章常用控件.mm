@@ -2,6 +2,7 @@
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
 <node COLOR="#000000" CREATED="1541399843889" ID="Freemind_Link_807788290" MODIFIED="1541400189394" TEXT="&#x7b2c;&#x4e09;&#x7ae0;&#x5e38;&#x7528;&#x63a7;&#x4ef6;">
 <edge COLOR="#009999" WIDTH="4"/>
+<node CREATED="1541865090150" ID="Freemind_Link_881435184" MODIFIED="1541865095777" POSITION="right" TEXT="CheckBox"/>
 <node COLOR="#000000" CREATED="1541399899265" ID="_" MODIFIED="1541400189394" POSITION="right" TEXT="TextView">
 <edge COLOR="#009999" WIDTH="4"/>
 <node COLOR="#000000" CREATED="1541399992435" ID="Freemind_Link_654458114" MODIFIED="1541401568469" TEXT="android:gravity &#x6587;&#x5b57;&#x5728;&#x63a7;&#x4ef6;&#x4e2d;&#x7684;&#x5bf9;&#x9f50;&#x65b9;&#x5f0f;&#xa;android:layout_gravity: &#x63a7;&#x4ef6;&#x5728;&#x5e03;&#x5c40;&#x4e2d;&#x7684;&#x5bf9;&#x9f50;&#x65b9;&#x5f0f;">
@@ -26,6 +27,7 @@
 <node CREATED="1541400245503" ID="Freemind_Link_172820123" MODIFIED="1541400253400" POSITION="right" TEXT="EditText" VSHIFT="39">
 <node CREATED="1541400255555" ID="Freemind_Link_134987337" MODIFIED="1541400269069" TEXT="android:hint=&quot;&#x63d0;&#x793a;&#x4fe1;&#x606f;&quot;"/>
 <node CREATED="1541400311704" ID="Freemind_Link_1884139129" MODIFIED="1541400332877" TEXT="android&#xff1a;maxLines &#x6700;&#x5927;&#x884c;&#x6570;"/>
+<node CREATED="1541865046003" ID="Freemind_Link_1987462094" MODIFIED="1541865058804" TEXT="android:inputType=&quot;textPassword&quot;"/>
 <node CREATED="1541400333405" ID="Freemind_Link_1205063348" MODIFIED="1541400367531" TEXT="getText().toString() &#x83b7;&#x53d6;&#x7528;&#x6237;&#x8f93;&#x5165;&#x7684;&#x5b57;&#x7b26;"/>
 </node>
 <node CREATED="1541400400509" HGAP="27" ID="Freemind_Link_862541245" MODIFIED="1541400407521" POSITION="right" TEXT="ImageView" VSHIFT="48">
