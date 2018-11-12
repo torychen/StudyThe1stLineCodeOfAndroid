@@ -119,7 +119,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
                 break;
 
             case TYPE_CANCELED:
-                listener.onCancelled();
+                listener.onCanceled();
                 break;
 
             case TYPE_PAUSED:
