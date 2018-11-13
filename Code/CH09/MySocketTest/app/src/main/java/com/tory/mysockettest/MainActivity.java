@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.net.DatagramPacket;
@@ -18,6 +19,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     final static String SEND_UDP = "send udp from Android";
     final static String SEND_TCP = "send tcp from Android";
 
+    private boolean mQuitUdpRcv = false;
+    private boolean mQuitTcpRcv = false;
+
+    class UdpListener {
+        public void onRecevied(String data)
+        {
+            showRecvUdp(data);
+        }
+    }
+
+    TextView mTextViewUdp;
+    TextView mTextViewTcp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +38,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.btnSendUdp).setOnClickListener(this);
         findViewById(R.id.btnRcvUdp).setOnClickListener(this);
+        findViewById(R.id.btnQuitRcvUdp).setOnClickListener(this);
 
         findViewById(R.id.btnSendTcp).setOnClickListener(this);
         findViewById(R.id.btnRcvTcp).setOnClickListener(this);
+        findViewById(R.id.btnQuitRcvTcp).setOnClickListener(this);
+
+        mTextViewTcp = findViewById(R.id.tvTcp);
+        mTextViewTcp.setText("Before receive anything from tcp.");
+
+        mTextViewUdp =findViewById(R.id.tvUdp);
+        mTextViewUdp.setText("Before receive anything from udp.");
 
     }
 
@@ -39,11 +60,55 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 sendUdp();
                 break;
             case R.id.btnRcvUdp:
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        recvUdp(new UdpListener());
+                    }
+                }).start();
                 break;
             case R.id.btnSendTcp:
                 break;
             case R.id.btnRcvTcp:
                 break;
+
+            case R.id.btnQuitRcvTcp:
+                mQuitTcpRcv = true;
+                break;
+
+            case R.id.btnQuitRcvUdp:
+                mQuitUdpRcv = true;
+                break;
+        }
+    }
+
+    private void showRecvUdp (final String msg) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mTextViewUdp.setText(msg);
+            }
+        });
+    }
+    private void recvUdp(UdpListener listener) {
+        byte[] msg = new byte[1024];
+        try {
+            DatagramSocket socket = new DatagramSocket(PORT);
+            DatagramPacket packet = new DatagramPacket(msg, msg.length);
+            try{
+                while(!mQuitUdpRcv) {
+                    socket.receive(packet);
+
+                    String data = new String(packet.getData()).trim();
+                    if (data != null) listener.onRecevied(data);
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

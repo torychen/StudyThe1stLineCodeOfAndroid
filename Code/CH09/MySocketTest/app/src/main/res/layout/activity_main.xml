@@ -29,6 +29,12 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
+            <Button
+                android:text="quit rcv udp"
+                android:id="@+id/btnQuitRcvUdp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <TextView
@@ -63,6 +69,12 @@
             <Button
                 android:text="rcv tcp"
                 android:id="@+id/btnRcvTcp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="quit rcv tcp"
+                android:id="@+id/btnQuitRcvTcp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
