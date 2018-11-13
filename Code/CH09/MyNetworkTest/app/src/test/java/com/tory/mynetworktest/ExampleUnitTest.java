@@ -1,4 +1,4 @@
-package com.tory.networktest;
+package com.tory.mynetworktest;
 
 import org.junit.Test;
 

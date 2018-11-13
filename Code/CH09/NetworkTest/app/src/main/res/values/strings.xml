@@ -1,4 +1,3 @@
 <resources>
     <string name="app_name">NetworkTest</string>
-    <string name="btn_send_request_name">Send Request</string>
 </resources>
