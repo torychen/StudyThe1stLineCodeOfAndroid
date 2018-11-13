@@ -36,9 +36,11 @@
 </node>
 <node CREATED="1541581963322" ID="Freemind_Link_651196294" MODIFIED="1541584462848" POSITION="left" TEXT="&#x8d39;&#x65f6;&#x64cd;&#x4f5c;&#x5728;&#x5b50;&#x7ebf;&#x7a0b;&#xff0c;&#x66f4;&#x65b0;UI&#x5728;&#x4e3b;&#x7ebf;&#x7a0b;&#xa;&#xa;runOnUiThread"/>
 <node CREATED="1541582415802" ID="Freemind_Link_733205002" MODIFIED="1541582429849" POSITION="left" TEXT="Apache &#x670d;&#x52a1;&#x5668;&#x642d;&#x5efa;" VSHIFT="87"/>
+<node CREATED="1542077904331" HGAP="21" ID="Freemind_Link_1665077627" MODIFIED="1542077947039" POSITION="left" TEXT="&#x7f51;&#x7edc;&#x670d;&#x52a1;&#x7684;&#x57fa;&#x672c;&#x6b65;&#x9aa4;&#xa;&#x53d1;&#x9001;&#x8bf7;&#x6c42;&#xff0c;&#x5904;&#x7406;&#x670d;&#x52a1;&#x53bb;&#x54cd;&#x5e94;&#xff0c;&#x89e3;&#x6790;&#x6570;&#x636e;&#xff0c;&#x6700;&#x7ec8;&#x9875;&#x9762;&#x5c55;&#x793a;" VSHIFT="33"/>
 <node CREATED="1541583996247" ID="Freemind_Link_1602668586" MODIFIED="1541584304768" POSITION="left" TEXT="&#x56de;&#x8c03;&#x673a;&#x5236;">
 <icon BUILTIN="bookmark"/>
 <node CREATED="1541584009106" ID="Freemind_Link_309395065" MODIFIED="1541584278777" TEXT="&#x7f51;&#x7edc;&#x64cd;&#x4f5c;&#x662f;&#x8017;&#x65f6;&#x64cd;&#x4f5c;&#xff0c;&#x5fc5;&#x987b;&#x8981;&#x5728;&#x5b50;&#x7ebf;&#x7a0b;&#x91cc;&#x5904;&#x7406;&#x3002;&#xa;&#x5982;&#xa;sendRequest&#xff08;&#xff09;&#xa;{&#xa;  new Thread&#xff08;new Runnable&#xff08;&#xff09;{ http connection}&#xff09;&#xa;}&#xa;&#xa;&#x7531;&#x4e8e;&#x670d;&#x52a1;&#x5668;&#x54cd;&#x5e94;&#x65f6;&#x95f4;&#x8f83;&#x957f;&#xff0c;sendRequest&#x5e38;&#x5e38;&#x5df2;&#x7ecf;&#x9000;&#x51fa;&#x4e86;&#x3002;&#x5b50;&#x7ebf;&#x7a0b;&#x8fd8;&#x5728;&#x7b49;&#x670d;&#x52a1;&#x5668;&#xa;&#xa;&#x90a3;&#x4e48;&#x600e;&#x6837;&#x83b7;&#x53d6; &#x670d;&#x52a1;&#x5668;&#x8fd4;&#x56de;&#x7684;&#x6570;&#x636e;&#x5462;&#xff1f;&#xa;&#xa;&#x7528;&#x56de;&#x8c03;&#x51fd;&#x6570;&#x3002;&#xa;&#xa;sendRequest&#xff08;listener &#xff09;&#xa;{&#xa;  new Thread&#xff08;new Runnable&#xff08;&#xff09;{ http connection&#xff1b; listener.dosomething&#xff08;&#xff09;}&#xff09;&#xa;}"/>
 </node>
+<node CREATED="1542095151152" ID="Freemind_Link_836438283" MODIFIED="1542095163951" POSITION="left" TEXT="Socket &#x7f16;&#x7a0b;" VSHIFT="33"/>
 </node>
 </map>
