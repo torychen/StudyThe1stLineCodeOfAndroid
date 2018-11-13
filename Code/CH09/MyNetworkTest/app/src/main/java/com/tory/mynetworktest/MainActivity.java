@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.Random;
 
 import okhttp3.OkHttpClient;
@@ -28,6 +31,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSendRequest.setOnClickListener(this);
     }
 
+    private int counter = 0;
+    private final static int RESPONSE_RAW = 0;
+    private final static int RESPONSE_JSON = 1;
+    private final static int RESPONSE_XML = 2;
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -35,7 +43,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        showResponse(getResponse("http://10.0.2.2/"));
+                        counter++;
+                        if (counter % 3 == RESPONSE_RAW) {
+
+                            showResponse(getResponse("http://10.0.2.2/"), RESPONSE_RAW);
+                        } else if (counter % 3 == RESPONSE_JSON) {
+                            showResponse(getResponse("http://10.0.2.2/get_data.json"), RESPONSE_JSON);
+                        } else {
+                            showResponse(getResponse("http://10.0.2.2/get_data.xml"), RESPONSE_XML);
+                        }
                     }
                 }).start();
 
@@ -62,11 +78,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void showResponse (final String response) {
+    private void showResponse (final String response, final int flag) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mTextView.setText(response);
+                StringBuilder builder = new StringBuilder();
+
+                switch (flag) {
+                    case RESPONSE_JSON:
+                        try {
+                            JSONArray jsonArray = new JSONArray(response);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                builder.append("id is " + jsonObject.getString("id"));
+                                builder.append("name is " + jsonObject.getString("name"));
+                                builder.append("version is " + jsonObject.getString("version"));
+                            }
+                        } catch (Exception e) {
+                            builder.append("parse json file fail. The original string is ");
+                        }
+
+                        break;
+                    case RESPONSE_RAW:
+                        break;
+                }
+
+                builder.append(response);
+                mTextView.setText(builder.toString());
 
             }
         });
