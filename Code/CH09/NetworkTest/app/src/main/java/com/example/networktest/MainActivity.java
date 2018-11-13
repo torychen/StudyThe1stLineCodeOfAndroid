@@ -71,7 +71,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 HttpURLConnection connection = null;
                 BufferedReader reader = null;
                 try {
+                    //Both the following two are ok.
                     URL url = new URL("http://www.baidu.com");
+                    //tory: URL urlok = new URL("http://10.0.2.2/");
                     connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET");
                     connection.setConnectTimeout(8000);
