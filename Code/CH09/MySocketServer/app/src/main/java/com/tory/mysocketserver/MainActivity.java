@@ -1,6 +1,7 @@
 package com.tory.mysocketserver;
 
 
+import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.lang.ref.WeakReference;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
@@ -58,6 +60,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView mTextViewTcp;
 
     Handler handler;
+
+    private static class MyHandler extends Handler {
+        private WeakReference<Activity> activityWeakReference;
+        TextView textView;
+        public MyHandler(Activity activity, TextView textView) {
+            activityWeakReference = new WeakReference<>(activity);
+            this.textView = textView;
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            String data = (String) msg.obj;
+            textView.setText(data);
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,20 +82,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.btnListenTcp).setOnClickListener(this);
 
-
-        handler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                String data = (String) msg.obj;
-
-                TextView textView = findViewById(R.id.tvTcp);
-                textView.setText(data);
-
-            }
-        };
+        mTextViewTcp = findViewById(R.id.tvTcp);
 
 
-
+        handler = new MyHandler(MainActivity.this, mTextViewTcp);
 
         /*
         findViewById(R.id.btnSendUdp).setOnClickListener(this);
