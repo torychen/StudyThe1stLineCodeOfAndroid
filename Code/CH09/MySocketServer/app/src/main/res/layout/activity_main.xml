@@ -76,9 +76,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
             <Button
-                android:visibility="invisible"
-                android:text="quit rcv tcp"
-                android:id="@+id/btnQuitRcvTcp"
+                android:text="Listen tcp"
+                android:id="@+id/btnListenTcp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />

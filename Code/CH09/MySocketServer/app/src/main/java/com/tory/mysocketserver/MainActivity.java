@@ -1,6 +1,8 @@
 package com.tory.mysocketserver;
 
 
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -54,18 +56,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG_TCP = "tcp server";
     TextView mTextViewUdp;
     TextView mTextViewTcp;
+
+    Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.btnListenTcp).setOnClickListener(this);
+
+
+        handler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                String data = (String) msg.obj;
+
+                TextView textView = findViewById(R.id.tvTcp);
+                textView.setText(data);
+
+            }
+        };
+
+
+
+
+        /*
         findViewById(R.id.btnSendUdp).setOnClickListener(this);
         findViewById(R.id.btnRcvUdp).setOnClickListener(this);
         findViewById(R.id.btnQuitRcvUdp).setOnClickListener(this);
 
         findViewById(R.id.btnSendTcp).setOnClickListener(this);
         findViewById(R.id.btnRcvTcp).setOnClickListener(this);
-        findViewById(R.id.btnQuitRcvTcp).setOnClickListener(this);
 
         mTextViewTcp = findViewById(R.id.tvTcp);
         mTextViewTcp.setText("Before receive anything from tcp.");
@@ -75,7 +96,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         try {
 
-            server = new ServerSocket(PORT);
+            //server = new ServerSocket(PORT);
+            InetAddress inetAddress = InetAddress.getByName("10.0.2.2");
+            server = new ServerSocket(PORT, 0, inetAddress);
             mExecutorService = Executors.newCachedThreadPool();
 
             Log.d(TAG_TCP, "start server");
@@ -90,9 +113,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
 
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        */
     }
 
     class Service implements Runnable {
@@ -159,8 +185,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnRcvTcp:
                 break;
 
-            case R.id.btnQuitRcvTcp:
-                mQuitTcpRcv = true;
+            case R.id.btnListenTcp:
+                new ServerThread(handler).start();
+
                 break;
 
             case R.id.btnQuitRcvUdp:
