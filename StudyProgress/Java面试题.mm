@@ -43,5 +43,10 @@
 </node>
 </node>
 </node>
+<node CREATED="1542854433518" ID="Freemind_Link_334506917" MODIFIED="1542854441159" POSITION="left" TEXT="&#x5f02;&#x5e38;&#x5904;&#x7406;" VSHIFT="127">
+<node CREATED="1542854444691" ID="Freemind_Link_1828340007" MODIFIED="1542854856226" TEXT="Java&#x5f02;&#x5e38;&#x7684;&#x6355;&#x83b7;&#x53ca;&#x5904;&#x7406;---&#x5c0f;&#x603b;&#x7ed3;&#xa;https://blog.csdn.net/jakezhang1990/article/details/72880700&#xa;---&#xa;&#x5728;&#x5b9a;&#x4e49;&#x4e00;&#x4e2a;&#x65b9;&#x6cd5;&#x7684;&#x65f6;&#x5019;&#xff0c;&#x53ef;&#x4ee5;&#x4f7f;&#x7528;throws&#x5173;&#x952e;&#x5b57;&#x58f0;&#x660e;&#xff0c;&#x4f7f;&#x7528;throws&#x58f0;&#x660e;&#x7684;&#x65b9;&#x6cd5;&#x8868;&#x793a;&#x6b64;&#x65b9;&#x6cd5;&#x4e0d;&#x5904;&#x7406;&#x5f02;&#x5e38;&#xff0c;&#x800c;&#x662f;&#x4ea4;&#x7ed9;&#x65b9;&#x6cd5;&#x7684;&#x8c03;&#x7528;&#x5904;&#x8fdb;&#x884c;&#x5904;&#x7406;&#x3002;&#xa;&#xa;&#x6b64;&#x65f6;&#x8c03;&#x7528;&#x65b9;&#xff0c;&#x5fc5;&#x987b;&#x7528;try-catch &#x6355;&#x83b7;&#x5f02;&#x5e38;&#xff0c;&#x5426;&#x5219;&#x7f16;&#x8bd1;&#x4e0d;&#x8fc7;&#x3002;&#xa;"/>
+<node CREATED="1542854760875" ID="Freemind_Link_601743825" MODIFIED="1542854793900" TEXT="throw &#x629b;&#x51fa;&#x4e00;&#x4e2a; Exception&#xff0c;&#x5fc5;&#x987b;&#x6709;&#x4eba;&#x7528; try-catch &#x5904;&#x7406;" VSHIFT="26"/>
+<node CREATED="1542854795588" ID="Freemind_Link_329310656" MODIFIED="1542854819210" TEXT="Exception&#x548c;RunntimeException&#x7684;&#x533a;&#x522b;&#xff1a;&#xa;&#x2460;&#xff0c;Exception&#x5728;&#x7a0b;&#x5e8f;&#x4e2d;&#x5fc5;&#x987b;&#x8fdb;&#x884c;try-catch&#x5904;&#x7406;&#x3002;&#xa;&#x2461;&#xff0c;RunntimeException&#x53ef;&#x4ee5;&#x4e0d;&#x4f7f;&#x7528;try-catch&#x5904;&#x7406;&#xff0c;&#x4f46;&#x662f;&#x5982;&#x679c;&#x6709;&#x5f02;&#x5e38;&#x4ea7;&#x751f;&#xff0c;&#x5219;&#x5f02;&#x5e38;&#x5c06;&#x7531;jvm&#x8fdb;&#x884c;&#x5904;&#x7406;"/>
+</node>
 </node>
 </map>
