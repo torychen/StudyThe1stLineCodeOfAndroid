@@ -33,8 +33,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     EditText metInput;
     TextView mtvReadBack;
+    Button mbtnTestDb;
+
     final static private String mFileName = "mydata";
     private MyDBHelper mdbHelper;
+
+    private MyOpDbHelper opDbHelper;
+
+    //For Android Instrument test demo.
+    public void sayHello(View v){
+        TextView textView =  findViewById(R.id.tvReadBack);
+        EditText editText =  findViewById(R.id.etInput);
+        textView.setText("Hello, " + editText.getText().toString() + "!");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         metInput = findViewById(R.id.etInput);
         mtvReadBack = findViewById(R.id.tvReadBack);
+
+
         Button btnSave = findViewById(R.id.btnSave);
         Button btnLoad = findViewById(R.id.btnLoad);
 
@@ -73,12 +86,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     "name text)";*/
         mdbHelper = new MyDBHelper(MainActivity.this, "Book.db", null, 1);
 
+        opDbHelper = new MyOpDbHelper(MainActivity.this, "op.db", null, 1);
+
+
         Button btnCreate = findViewById(R.id.btnCreate);
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                SQLiteDatabase db = mdbHelper.getWritableDatabase();
 
             }
         });
@@ -90,6 +105,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 SQLiteDatabase db = mdbHelper.getWritableDatabase();
                 db.execSQL("insert into Book(author, price, page, name) values (?,?,?,?)", new String []{"Aaa", "10.5", "100", "Aaa's book"});
                 db.close();
+
+                db = opDbHelper.getWritableDatabase();
+                String sql = "insert into question(body) values(?)";
+                db.execSQL(sql, new String[] {"insert from android"});
             }
         });
 
