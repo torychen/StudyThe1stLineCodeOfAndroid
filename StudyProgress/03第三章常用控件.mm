@@ -3,7 +3,7 @@
 <node COLOR="#000000" CREATED="1541399843889" ID="Freemind_Link_807788290" MODIFIED="1541400189394" TEXT="&#x7b2c;&#x4e09;&#x7ae0;&#x5e38;&#x7528;&#x63a7;&#x4ef6;">
 <edge COLOR="#009999" WIDTH="4"/>
 <node CREATED="1541400771000" HGAP="28" ID="Freemind_Link_255641267" MODIFIED="1541400777695" POSITION="right" TEXT="AlertDialog" VSHIFT="57">
-<node CREATED="1541400781746" ID="Freemind_Link_1085602324" MODIFIED="1541401009229" TEXT="&#x5f39;&#x51fa;&#x5bf9;&#x8bdd;&#x6846;&#xff0c;&#x5c4f;&#x853d;&#x5176;&#x5b83;&#x63a7;&#x4ef6;&#x7684;&#x4ea4;&#x4e92;&#x80fd;&#x529b;&#xa;&#x7528; builder &#x521b;&#x5efa;&#xff0c;&#xa;AletDialog.Builder dialog = new XXX;&#xa;&#xa;&#x8bbe;&#x7f6e;&#x6309;&#x952e;&#x7684;&#x54cd;&#x5e94;&#x51fd;&#x6570;&#xa;dialog.setPositivButton(&quot;OK&quot;, new DislogInterface.OnClickListener(){})&#xa;&#xa;dialog.show()"/>
+<node CREATED="1541400781746" ID="Freemind_Link_1085602324" MODIFIED="1544148415762" TEXT="&#x5f39;&#x51fa;&#x5bf9;&#x8bdd;&#x6846;&#xff0c;&#x5c4f;&#x853d;&#x5176;&#x5b83;&#x63a7;&#x4ef6;&#x7684;&#x4ea4;&#x4e92;&#x80fd;&#x529b;&#xa;&#x7528; builder &#x521b;&#x5efa;&#xff0c;&#xa;AletDialog.Builder dialog = new XXX;&#xa;&#xa;&#x8bbe;&#x7f6e;&#x6309;&#x952e;&#x7684;&#x54cd;&#x5e94;&#x51fd;&#x6570;&#xa;dialog.setPositivButton(&quot;OK&quot;, new DialogInterface.OnClickListener(){})&#xa;&#xa;dialog.show()"/>
 </node>
 <node COLOR="#000000" CREATED="1541400055425" HGAP="23" ID="Freemind_Link_1822004871" MODIFIED="1541400189393" POSITION="right" TEXT="Button" VSHIFT="22">
 <edge COLOR="#009999" WIDTH="4"/>
@@ -72,7 +72,7 @@
 <node CREATED="1541408318765" ID="Freemind_Link_728162372" MODIFIED="1541408391686" TEXT="&#x767e;&#x5206;&#x6bd4;&#x5e27;&#x5e03;&#x5c40; PercenFrameLayout&#xa;&#x9700;&#x8981;&#x6dfb;&#x52a0; support&#x5e93;&#xa;app:layout_widthPercent=&quot;50%&quot;&#xa;&#xa;"/>
 </node>
 <node CREATED="1542079243354" ID="Freemind_Link_1889388331" MODIFIED="1542079252969" TEXT="ConstraintLayout" VSHIFT="69">
-<node CREATED="1542079342709" ID="Freemind_Link_1415524921" MODIFIED="1542079448725" TEXT="layout_constraintRight_toRightOf :&#x5f53;&#x524d;View&#x7684;&#x53f3;&#x4fa7;&#x548c;&#x53e6;&#x4e00;&#x4e2a;View&#x7684;&#x53f3;&#x4fa7;&#x4f4d;&#x7f6e;&#x5bf9;&#x5176;&#xff0c;&#x4e0e;RelativeLayout&#x7684;alignRight&#x5c5e;&#x6027;&#x76f8;&#x4f3c;&#xa;&#xa;layout_constraintTop_toTopOf :&#x5934;&#x90e8;&#x5bf9;&#x9f50;&#xff0c;&#x4e0e;alignTop&#x76f8;&#x4f3c;&#xa;&#xa;layout_constraintTop_toBottomOf :&#x5f53;&#x524d;View&#x5728;&#x53e6;&#x4e00;&#x4e2a;View&#x7684;&#x4e0b;&#x4fa7; &#x4e0e;below&#x76f8;&#x4f3c;&#xa;&#xa;layout_constraintBottom_toTopOf :&#x5f53;&#x524d;View&#x5728;&#x53e6;&#x4e00;&#x4e2a;View&#x7684;&#x4e0a;&#x65b9; &#x4e0e;above&#x76f8;&#x4f3c;"/>
+<node CREATED="1542079342709" ID="Freemind_Link_1415524921" MODIFIED="1544148536519" TEXT="layout_constraintRight_toRightOf :&#x5f53;&#x524d;View&#x7684;&#x53f3;&#x4fa7;&#x548c;&#x53e6;&#x4e00;&#x4e2a;View&#x7684;&#x53f3;&#x4fa7;&#x4f4d;&#x7f6e;&#x5bf9;&#x9f50;&#xff0c;&#x4e0e;RelativeLayout&#x7684;alignRight&#x5c5e;&#x6027;&#x76f8;&#x4f3c;&#xa;&#xa;layout_constraintTop_toTopOf :&#x5934;&#x90e8;&#x5bf9;&#x9f50;&#xff0c;&#x4e0e;alignTop&#x76f8;&#x4f3c;&#xa;&#xa;layout_constraintTop_toBottomOf :&#x5f53;&#x524d;View&#x5728;&#x53e6;&#x4e00;&#x4e2a;View&#x7684;&#x4e0b;&#x4fa7; &#x4e0e;below&#x76f8;&#x4f3c;&#xa;&#xa;layout_constraintBottom_toTopOf :&#x5f53;&#x524d;View&#x5728;&#x53e6;&#x4e00;&#x4e2a;View&#x7684;&#x4e0a;&#x65b9; &#x4e0e;above&#x76f8;&#x4f3c;"/>
 </node>
 </node>
 </node>

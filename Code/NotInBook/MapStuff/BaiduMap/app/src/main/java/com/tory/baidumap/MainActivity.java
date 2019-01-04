@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     // Used to load the 'native-lib' library on application startup.
-    static {
+    /*static {
         System.loadLibrary("native-lib");
-    }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +78,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mLocationClient.start();
 
         mLocationClient.requestLocation();
+
+        //Try to draw lines on map.
     }
 
     //配置定位SDK参数
@@ -206,5 +208,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    public native String stringFromJNI();
+    //public native String stringFromJNI();
 }
