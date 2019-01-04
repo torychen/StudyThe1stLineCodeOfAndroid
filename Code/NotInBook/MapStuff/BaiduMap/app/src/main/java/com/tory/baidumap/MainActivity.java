@@ -1,7 +1,9 @@
 package com.tory.baidumap;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -16,7 +18,12 @@ import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.model.LatLng;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LatLng mLatLng;
 
     private boolean mIsFirstLoc;
+
+    private static final String TAG = "MainActivity -->>";
 
 
     // Used to load the 'native-lib' library on application startup.
@@ -79,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mLocationClient.requestLocation();
 
-        //Try to draw lines on map.
     }
 
     //配置定位SDK参数
@@ -151,6 +159,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
             }
+
+            //Try to draw lines on map.
+        /*
+        List<LatLng> points = new ArrayList<LatLng>();
+points.add(new LatLng(item.getWeidu(), item.getJindu()));
+OverlayOptions ooPolyline = new PolylineOptions().width(10).color(Integer.valueOf(Color.BLUE)).points(points);mBaiduMap.addOverlay(ooPolyline);
+
+        * */
+
+            List<LatLng> points = new ArrayList<LatLng>();
+            points.add(mLatLng);
+
+            double lat2 = bdLocation.getLatitude() + 0.0001;
+            double lon2 = bdLocation.getLongitude() + 0.0001;
+
+            LatLng latLng2 = new LatLng(lat2,
+                    lon2);
+
+            Log.d(TAG, "onReceiveLocation: lat " + lat2 + "lon" + lon2);
+
+            OverlayOptions ooPolyline = new PolylineOptions().width(10).color(Integer.valueOf(Color.BLUE)).points(points);
+            mBaiduMap.addOverlay(ooPolyline);
         }
     }
 
